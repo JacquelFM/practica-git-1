@@ -7,21 +7,20 @@ class Main {
         this._lista = new Lista()
 
         document.getElementById('calcular').addEventListener('click', () => {
-            let expre = document.getElementById('expresion').value;
+            let expresion = document.getElementById('expresion').value;
 
-            console.log(expre.length);
+            for (let i = 0; expresion.length > i; i++) {
+                let valor = expresion.charAt(i);
+                this._lista.agregarNodo(
+                    new Nodo(
+                        valor
 
-            for (let i = 0; expre.length > i; i++) {
-
-                let valor = expre.charAt(i);
-                let nuevoNodo = new Nodo(valor)
-                this._lista.agregarNodo(nuevoNodo)
-
+                    ));
             }
 
             // this._lista.mostrarNodos();
 
-            this._lista.pruebaNodos();
+            this._lista.arbol();
 
         });
     }
